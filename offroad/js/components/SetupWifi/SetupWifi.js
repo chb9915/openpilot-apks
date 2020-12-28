@@ -71,7 +71,7 @@ class SetupWifi extends Component {
             if (this.state.isLoading && this.state.networks.length < 1) {
                 this.setState({
                     isLoading: false,
-                    errorMessage: 'Wifi ≥◊∆Æøˆ≈©∏¶ ∞Àªˆ«œ¥¬ ¡ﬂ πÆ¡¶πﬂª˝ \n¿ß \"√ﬂ∞°ø…º«\"ø°º≠ Wifi∏¶ ªÁøÎ«œµµ∑œ º≥¡§µ«æÓ¿÷¥¬¡ˆ »Æ¿Œ«œººø‰.',
+                    errorMessage: 'Wifi ÎÑ§Ìä∏ÏõåÌÅ¨Î•º Í≤ÄÏÉâÌïòÎäî Ï§ë Î¨∏Ï†úÎ∞úÏÉù \nÏúÑ \"Ï∂îÍ∞ÄÏòµÏÖò\"ÏóêÏÑú WifiÎ•º ÏÇ¨Ïö©ÌïòÎèÑÎ°ù ÏÑ§Ï†ïÎêòÏñ¥ÏûàÎäîÏßÄ ÌôïÏù∏ÌïòÏÑ∏Ïöî.',
                 })
             }
         }, 15000);
@@ -220,9 +220,9 @@ class SetupWifi extends Component {
                             size='tiny'
                             color='lightGrey200'
                             weight='light'>
-                            { isConnected ? 'ø¨∞·µ '
-                                : isConnecting ? '¿Œ¡ı¡ﬂ...'
-                                : hasAttempted ? '¿Œ¡ıπÆ¡¶'
+                            { isConnected ? 'Ïó∞Í≤∞Îê®'
+                                : isConnecting ? 'Ïù∏Ï¶ùÏ§ë...'
+                                : hasAttempted ? 'Ïù∏Ï¶ùÎ¨∏Ï†ú'
                                 : item.security }
                         </X.Text>
                     </View>
@@ -240,7 +240,7 @@ class SetupWifi extends Component {
                                     color='white'
                                     size='small'
                                     weight='semibold'>
-                                    ø¨∞·µ 
+                                    Ïó∞Í≤∞Îê®
                                 </X.Text>
                             </X.Button>
                         ): null }
@@ -263,7 +263,7 @@ class SetupWifi extends Component {
                                 size='small'
                                 onPress={ () => this.onTapToConnect(item) }
                                 style={ Styles.setupWifiNetworkButton }>
-                                ø¨∞·
+                                Ïó∞Í≤∞
                             </X.Button>
                         ) : null }
                     </View>
@@ -302,7 +302,7 @@ class SetupWifi extends Component {
                                         color='dark'
                                         isChecked={ showPassword }
                                         onPress={ this.handleShowPasswordToggled }
-                                        label='∆–Ω∫øˆµÂ «•Ω√' />
+                                        label='Ìå®Ïä§ÏõåÎìú ÌëúÏãú' />
                                 </View>
                                 <X.Button
                                     key='cancel'
@@ -314,7 +314,7 @@ class SetupWifi extends Component {
                                         color='lightGrey700'
                                         size='small'
                                         weight='semibold'>
-                                        √Îº“
+                                        Ï∑®ÏÜå
                                     </X.Text>
                                 </X.Button>
                                 <X.Button
@@ -327,7 +327,7 @@ class SetupWifi extends Component {
                                         color='white'
                                         size='small'
                                         weight='semibold'>
-                                        ø¨∞·
+                                        Ïó∞Í≤∞
                                     </X.Text>
                                 </X.Button>
                             </View>
@@ -335,7 +335,7 @@ class SetupWifi extends Component {
                         <X.Text
                             size='small'
                             weight='semibold'>
-                            The network "{ connectingNetwork ? connectingNetwork.ssid : '' }"ø° ø¨∞·«œ∑¡∏È ∆–Ω∫øˆµÂ∞° « ø‰«’¥œ¥Ÿ.
+                            The network "{ connectingNetwork ? connectingNetwork.ssid : '' }"Ïóê Ïó∞Í≤∞ÌïòÎ†§Î©¥ Ìå®Ïä§ÏõåÎìúÍ∞Ä ÌïÑÏöîÌï©ÎãàÎã§.
                         </X.Text>
                         <View style={ Styles.setupWifiPasswordInputRow }>
                             <View style={ Styles.setupWifiPasswordInputLabel }>
@@ -343,7 +343,7 @@ class SetupWifi extends Component {
                                     size='small'
                                     color='whiteFieldLabel'
                                     style={ Styles.setupWifiPasswordInputLabelText }>
-                                    ∆–Ω∫øˆµÂ:
+                                    Ìå®Ïä§ÏõåÎìú:
                                 </X.Text>
                             </View>
                             <TextInput
@@ -364,14 +364,14 @@ class SetupWifi extends Component {
                             color='white'
                             size='big'
                             weight='bold'>
-                            Wifi º≥¡§
+                            Wifi ÏÑ§Ï†ï
                         </X.Text>
                         <X.Button
                             size='small'
                             color='setupInverted'
                             onPress={ this.props.handleSetupWifiMoreOptionsPressed }
                             style={ Styles.setupWifiHeaderButton }>
-                            √ﬂ∞°ø…º«
+                            Ï∂îÍ∞ÄÏòµÏÖò
                         </X.Button>
                     </View>
                     <View style={ Styles.setupWifiNetworks }>
@@ -391,7 +391,7 @@ class SetupWifi extends Component {
                                     <X.Text
                                         color='white'
                                         size='small'>
-                                        { isLoading && networks.length == 0 ? 'Wifi ≥◊∆Æøˆ≈© ∞Àªˆ¡ﬂ...'
+                                        { isLoading && networks.length == 0 ? 'Wifi ÎÑ§Ìä∏ÏõåÌÅ¨ Í≤ÄÏÉâÏ§ë...'
                                             : !isLoading && networks.length == 0 ?
                                             this.state.errorMessage : '' }
                                     </X.Text>
@@ -408,7 +408,7 @@ class SetupWifi extends Component {
                                 <X.Text
                                     color='white'
                                     weight='semibold'>
-                                    µ⁄∑Œ
+                                    Îí§Î°ú
                                 </X.Text>
                             </X.Button>
                         ) : null }
@@ -419,7 +419,7 @@ class SetupWifi extends Component {
                             <X.Text
                                 color='white'
                                 weight='semibold'>
-                                { !connectedNetworkSsid ? '√Îº“' : '»Æ¿Œ' }
+                                { !connectedNetworkSsid ? 'Ï∑®ÏÜå' : 'ÌôïÏù∏' }
                             </X.Text>
                         </X.Button>
                     </View>

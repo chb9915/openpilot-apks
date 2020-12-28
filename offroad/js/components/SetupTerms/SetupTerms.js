@@ -36,13 +36,13 @@ class SetupTerms extends Component {
                     </View>
                     <ScrollThrough
                         onPrimaryButtonClick={ onAccept }
-                        primaryButtonText='¾à°ü ¼ö¶ô'
-                        primaryButtonTextDisabled='°è¼ÓÇÏ·Á¸é ÀĞ±â'
-                        secondaryButtonText='°ÅÀı'
+                        primaryButtonText='ì•½ê´€ ìˆ˜ë½'
+                        primaryButtonTextDisabled='ê³„ì†í•˜ë ¤ë©´ ì½ê¸°'
+                        secondaryButtonText='ê±°ì ˆ'
                         scrollViewStyles={ Styles.setupTermsScrollView }>
                         <X.Text weight='semibold' color='white'>Comma.ai, Inc. Terms & Conditions</X.Text>
                         <X.Text size='small' color='white' style={ Styles.tosText }>{ Documents.TOS }</X.Text>
-                        <X.Text size='small' color='white'>°³ÀÎ Á¤º¸ º¸È£ Á¤Ã¥Àº https://my.comma.ai/privacy.html ¿¡¼­ È®ÀÎÇÏ¼¼¿ä.</X.Text>
+                        <X.Text size='small' color='white'>ê°œì¸ ì •ë³´ ë³´í˜¸ ì •ì±…ì€ https://my.comma.ai/privacy.html ì—ì„œ í™•ì¸í•˜ì„¸ìš”.</X.Text>
                     </ScrollThrough>
                 </X.Entrance>
             </X.Gradient>
