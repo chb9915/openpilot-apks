@@ -719,7 +719,7 @@ class Settings extends Component {
                                     title='Enable Slow On Curves'
                                     value={ !!parseInt(sccSmootherSlowOnCurves) }
                                     iconSource={ Icons.openpilot }
-                                    description=''
+                                    description=' When curve is severe, it adjusts speed slowly. '
                                     isExpanded={ expandedCell == 'sccSmootherSlowOnCurves_enabled' }
                                     handleExpanded={ () => this.handleExpanded('sccSmootherSlowOnCurves_enabled') }
                                     handleChanged={ this.props.setSccSmootherSlowOnCurves } />
@@ -730,7 +730,7 @@ class Settings extends Component {
                                     title='Sync set speed on gas pressed'
                                     value={ !!parseInt(sccSmootherSyncGasPressed) }
                                     iconSource={ Icons.openpilot }
-                                    description=''
+                                    description=' When speed is above cruise set, it is synchronized current speed. '
                                     isExpanded={ expandedCell == 'sccSmootherSyncGasPressed_enabled' }
                                     handleExpanded={ () => this.handleExpanded('sccSmootherSyncGasPressed_enabled') }
                                     handleChanged={ this.props.setSccSmootherSyncGasPressed } />
@@ -1052,16 +1052,16 @@ const mapDispatchToProps = dispatch => ({
         if(sccSmootherEnabled == 1)
         {
             Alert.alert(
-              "주의",
-              "SCC Smoother는 설정속도만 조절하고 최종 가감속은 순정 SCC가 담당합니다.\n이점 충분히 인지 후 사용하시기 바랍니다.\n충분히 인지하셨습니까?",
+              "Warning",
+              "SCC Smoother is only cruise set to adjust. It is just using the car system. \nPlease use after fully aware of the benefits.\nAre you fully aware of it?",
               [
                 {
-                  text: "잘 모르겠습니다",
+                  text: "No, I don`t",
                   onPress: () => dispatch(updateParam(Params.KEY_SCC_SMOOTHER_ENABLED, "0")),
                   style: "cancel"
                 },
                 {
-                    text: "충분히 인지했습니다",
+                    text: "Yes, I do",
                     onPress: () =>
                         dispatch(updateParam(Params.KEY_SCC_SMOOTHER_ENABLED, (sccSmootherEnabled | 0).toString()))
                 },
