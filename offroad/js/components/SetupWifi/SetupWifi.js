@@ -71,7 +71,7 @@ class SetupWifi extends Component {
             if (this.state.isLoading && this.state.networks.length < 1) {
                 this.setState({
                     isLoading: false,
-                    errorMessage: 'There was a problem scanning WiFi networks. \nMake sure WiFi is enabled in \"More Options\" above.',
+                    errorMessage: 'Wifi 네트워크를 검색하는 중 문제발생 \n위 \"추가옵션\"에서 Wifi를 사용하도록 설정되어있는지 확인하세요.',
                 })
             }
         }, 15000);
@@ -220,9 +220,9 @@ class SetupWifi extends Component {
                             size='tiny'
                             color='lightGrey200'
                             weight='light'>
-                            { isConnected ? 'Connected'
-                                : isConnecting ? 'Authenticating...'
-                                : hasAttempted ? 'Authentication problem'
+                            { isConnected ? '연결됨'
+                                : isConnecting ? '인증중...'
+                                : hasAttempted ? '인증문제'
                                 : item.security }
                         </X.Text>
                     </View>
@@ -240,7 +240,7 @@ class SetupWifi extends Component {
                                     color='white'
                                     size='small'
                                     weight='semibold'>
-                                    Connected
+                                    연결됨
                                 </X.Text>
                             </X.Button>
                         ): null }
@@ -263,7 +263,7 @@ class SetupWifi extends Component {
                                 size='small'
                                 onPress={ () => this.onTapToConnect(item) }
                                 style={ Styles.setupWifiNetworkButton }>
-                                Connect
+                                연결
                             </X.Button>
                         ) : null }
                     </View>
@@ -302,7 +302,7 @@ class SetupWifi extends Component {
                                         color='dark'
                                         isChecked={ showPassword }
                                         onPress={ this.handleShowPasswordToggled }
-                                        label='Show password' />
+                                        label='패스워드 표시' />
                                 </View>
                                 <X.Button
                                     key='cancel'
@@ -314,7 +314,7 @@ class SetupWifi extends Component {
                                         color='lightGrey700'
                                         size='small'
                                         weight='semibold'>
-                                        Cancel
+                                        취소
                                     </X.Text>
                                 </X.Button>
                                 <X.Button
@@ -327,7 +327,7 @@ class SetupWifi extends Component {
                                         color='white'
                                         size='small'
                                         weight='semibold'>
-                                        Connect
+                                        연결
                                     </X.Text>
                                 </X.Button>
                             </View>
@@ -335,7 +335,7 @@ class SetupWifi extends Component {
                         <X.Text
                             size='small'
                             weight='semibold'>
-                            The network "{ connectingNetwork ? connectingNetwork.ssid : '' }" requires a password.
+                            The network "{ connectingNetwork ? connectingNetwork.ssid : '' }"에 연결하려면 패스워드가 필요합니다.
                         </X.Text>
                         <View style={ Styles.setupWifiPasswordInputRow }>
                             <View style={ Styles.setupWifiPasswordInputLabel }>
@@ -343,7 +343,7 @@ class SetupWifi extends Component {
                                     size='small'
                                     color='whiteFieldLabel'
                                     style={ Styles.setupWifiPasswordInputLabelText }>
-                                    Password:
+                                    패스워드:
                                 </X.Text>
                             </View>
                             <TextInput
@@ -364,14 +364,14 @@ class SetupWifi extends Component {
                             color='white'
                             size='big'
                             weight='bold'>
-                            Connect to WiFi
+                            Wifi 설정
                         </X.Text>
                         <X.Button
                             size='small'
                             color='setupInverted'
                             onPress={ this.props.handleSetupWifiMoreOptionsPressed }
                             style={ Styles.setupWifiHeaderButton }>
-                            More Options
+                            추가옵션
                         </X.Button>
                     </View>
                     <View style={ Styles.setupWifiNetworks }>
@@ -391,7 +391,7 @@ class SetupWifi extends Component {
                                     <X.Text
                                         color='white'
                                         size='small'>
-                                        { isLoading && networks.length == 0 ? 'Scanning WiFi Networks...'
+                                        { isLoading && networks.length == 0 ? 'Wifi 네트워크 검색중...'
                                             : !isLoading && networks.length == 0 ?
                                             this.state.errorMessage : '' }
                                     </X.Text>
@@ -408,7 +408,7 @@ class SetupWifi extends Component {
                                 <X.Text
                                     color='white'
                                     weight='semibold'>
-                                    Go Back
+                                    뒤로
                                 </X.Text>
                             </X.Button>
                         ) : null }
@@ -419,7 +419,7 @@ class SetupWifi extends Component {
                             <X.Text
                                 color='white'
                                 weight='semibold'>
-                                { !connectedNetworkSsid ? 'Skip For Now' : 'Continue' }
+                                { !connectedNetworkSsid ? '취소' : '확인' }
                             </X.Text>
                         </X.Button>
                     </View>
